@@ -40,7 +40,8 @@ class Circulo:
 def set_radius():
 
     """Funcion destinada a permitir que el usuario asigne un valor numerico a ser usado como radio del circulo.\n
-    Si el valor no es numerico o no es positivo eleva un error"""
+    Si el valor no es numerico o no es positivo eleva un error
+    """
 
     r = input('Ingrese el valor del radio del circulo en cm: ')
     if not r.isnumeric() or float(r) <= 0:

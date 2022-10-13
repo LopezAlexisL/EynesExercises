@@ -34,3 +34,7 @@ Funciones
 
 - options() -> None : muestra por consola opciones para el usuario con las posibilidades de uso
 
+
+## Test
+
+Los ejercicios de simple.py & matriz.py incluyen doctest para las funciones que reciben algun parametro y tienen retorno

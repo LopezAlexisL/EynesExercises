@@ -1,4 +1,4 @@
-import random
+import random, doctest
 
 
 def new_matrix():
@@ -31,7 +31,11 @@ def consecutives(l):
 
     """Funcion que recibe una lista como parametro.\n
     Utiliza dos ciclos for para recorrer la lista y corroborar si los elementos numericos estan ordenados de forma creciente o decreciente.\n
-    Retorna True si alguna de dichas condiciones se cumple"""
+    Retorna True si alguna de dichas condiciones se cumple
+    
+    >>> consecutives([1,2,3,4,0])
+    True
+    """
 
     res = False
     
@@ -50,12 +54,14 @@ def consecutives(l):
     if increasing and sum(increasing) == 3 or decreasing and sum(decreasing) == 3:
         res = True
     return res
+doctest.testmod(name='consecutives', verbose=True)
 
 
 def check_lines(axis, index, list):
 
     """Funcion que recibe 3 parametros.\n
-    Ejecuta una funcion dentro que corrobora si tiene elementos consecutivos dentro e imprime un mensaje acorde al resultado"""
+    Ejecuta una funcion dentro que corrobora si tiene elementos consecutivos dentro e imprime un mensaje acorde al resultado    
+    """
 
     first = consecutives(list[:4])
     last = consecutives(list[1:])
@@ -76,7 +82,10 @@ def get_rows(m):
 
 def get_columns(m):
 
-    """Funcion que recibe una matriz como parametro y le asigna indice a cada elemento de las columnas de la matriz"""
+    """Funcion que recibe una matriz como parametro y le asigna indice a cada elemento de las columnas de la matriz
+    >>> get_columns([[1,1,1,4,5],[2,4,1,1,1],[5,4,3,2,1],[3,0,2,2,2],[1,5,1,4,1]])
+    [[0, [1, 2, 5, 3, 1]], [1, [1, 4, 4, 0, 5]], [2, [1, 1, 3, 2, 1]], [3, [4, 1, 2, 2, 4]], [4, [5, 1, 1, 2, 1]]]
+    """
 
     col = []
     for e in range(len(m)):
@@ -85,6 +94,7 @@ def get_columns(m):
             r.append(m[i][e])
         col.append(r)
     return [list((i,col[i])) for i in range(len(col))]
+doctest.testmod(name='get_columns', verbose=True)
 
 def run():
     matrix = new_matrix()
